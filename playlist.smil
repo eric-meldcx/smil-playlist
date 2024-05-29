@@ -2,11 +2,7 @@
   <head>
     <layout>
       <root-layout width="1920" height="1080" />
-			<region regionName="topOverlay" left="0" top="0" width="1920" height="68" z-index="9" backgroundColor="transparent" />
-			<region regionName="video" left="0" top="0" width="1280" height="720" z-index="1"/>
-			<region regionName="bottomWidget" left="0" bottom="0" width="1280" height="360" z-index="1"/>
-			<region regionName="topRightWidget" left="1280" top="0" width="640" height="506" z-index="1"/>
-			<region regionName="bottomRightWidget" left="1280" top="506" width="640" height="574" z-index="1"/>
+			<region regionName="video" left="0" top="0" width="1920" height="1080" z-index="1"/>
     </layout>
   </head>
   <body>
@@ -20,47 +16,7 @@
 
       <par begin="__prefetchEnd.endEvent" repeatCount="indefinite">
         <par>
-          <seq repeatCount="indefinite">
-            <ref src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/topOverlay.wgt" type="application/widget" region="topOverlay" dur="60s"></ref>
-          </seq>
-        </par>
-
-        <par>
-          <seq repeatCount="indefinite">
-            <ref src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/bottomWidget.wgt" type="application/widget" region="bottomWidget" dur="60s"></ref>
-          </seq>
-        </par>
-
-        <par>
-          <seq repeatCount="indefinite">
-            <!-- 
-              - expr defines a condition, if the condition is met, the item (in this case image) is played, otherwise is skipped
-            -->
-            <img expr="adapi-weekday()=0" src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/widget_image_1.png" region="topRightWidget" dur="60s"></img>
-            <img expr="adapi-weekday()>=1 and adapi-weekday()<=5" src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/img_3.jpg" region="topRightWidget" dur="60s"></img>
-            <img expr="adapi-weekday()=6" src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/img_4.jpg" region="topRightWidget" dur="60s"></img>
-          </seq>
-        </par>
-
-        <par>
-          <seq repeatCount="indefinite">
-            <img src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/widget_image_2.png" region="bottomRightWidget" dur="60s"></img>
-            <img src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/img_5.jpg" region="bottomRightWidget" dur="60s"></img>
-            <img src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/img_6.jpg" region="bottomRightWidget" dur="60s"></img>
-          </seq>
-        </par>
-
-        <par>
           <excl>
-            <priorityClass higher="stop" lower="defer" peer="stop">
-              <par begin="wallclock(2025-06-30T00:00:00)" end="wallclock(2021-07-31T00:00:00)">
-                <seq repeatCount="indefinite">
-                    <video src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/video_3.mp4" region="video"></video>
-                    <img src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/img_7.jpg" dur="5s" region="video"></img>
-                  </seq>
-              </par>
-            </priorityClass>
-
             <priorityClass higher="stop" lower="defer" peer="stop">
               <par>
                 <seq repeatCount="indefinite" begin="0">
