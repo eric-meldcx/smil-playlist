@@ -21,8 +21,8 @@
               <par>
                 <seq repeatCount="indefinite" begin="0">
                     <video src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/video_1.mp4" region="video"></video>
-                    <video src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/video_2.mp4" region="video"></video>
                     <img src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/img_1.jpg" dur="5s" region="video"></img>
+                    <video src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/video_2.mp4" region="video"></video>
                     <img src="https://signageos-demo.s3.eu-central-1.amazonaws.com/smil/zones/files/img_2.jpg" dur="5s" region="video"></img>
                 </seq>
               </par>
